@@ -1,6 +1,15 @@
+<% if @user.errors %>
+<ul>
+  <% @book.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+</ul>
+<% end %>
+
+<div class="container">
 <h2>User info</h2>
-<%= form_with model: @user do |f|%>
-<%= render 'books/error', model: @user %>
+
+<%= form_with model: @user,url: user_path(current_user.id) do |f|%>
   <div class="user-name">Name</div>
     <%= f.text_field :name %>
   <div class="user-edit-image">Image</div>
@@ -11,3 +20,4 @@
      <%= f.submit "Update User", class: "btn btn-secondary"%>
   </div>
  <% end %>
+ </div>
