@@ -40,7 +40,7 @@
             </li>
             <li>
               <%= link_to destroy_user_session_path, method: :get, class: "nav-link text-light" do %>
-              <i lass="fas fa-sign-out-alt"></i>Log out
+              <i class="fas fa-sign-out-alt"></i>Log out
               <% end %>
             </li>
             <% else %>
@@ -71,8 +71,6 @@
       </header>
 
     <div class="body">
-
-    <% flash[:notice] %>
     <%= yield %>
   </body>
 
