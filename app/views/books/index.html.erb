@@ -31,7 +31,7 @@
       <%= form_with model: @book, local:true do |f| %>
       <div class="form-group">
         <label for="book_title">Title</label>
-        <%= f.text_area :title, class: "form-control book_title" %>
+        <%= f.text_field :title, class: "form-control book_title" %>
       </div>
       <div class="form-group">
         <label for="book_opinion">Opinion</label>
@@ -53,6 +53,7 @@
         <th colspan="3"></th>
        </tr>
     </thead>
+    <% @books.each do |book| %>
     <tbody>
       <tr>
        <td>
